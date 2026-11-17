@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruang Dialog — Asisten Virtual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout-shell">
+    <header class="topbar">
+      <div class="brand-group">
+        <span class="status-led" id="status-led"></span>
+        <div>
+          <h1 class="brand-title">Ruang Dialog</h1>
+          <p class="brand-sub">OpenRouter Gateway · PWS 181</p>
+        </div>
+      </div>
+      <button type="button" id="clear-btn" class="btn-reset" title="Bersihkan percakapan">
+        Reset Sesi
+      </button>
+    </header>
+
+    <main id="chat-box" class="chat-stream" aria-live="polite">
+      <article class="message bot">
+        <div class="msg-meta">
+          <span class="msg-sender">ASISTEN</span>
+          <span class="msg-time" id="init-time"></span>
+        </div>
+        <div class="message-content">Halo. Topik atau pertanyaan apa yang ingin Anda diskusikan hari ini?</div>
+      </article>
+    </main>
+
+    <footer class="composer-area">
+      <form id="chat-form" class="composer-form">
+        <textarea
+          id="user-input"
+          rows="1"
+          placeholder="Tulis pesan di sini... (Enter untuk kirim, Shift+Enter baris baru)"
+          required
+        ></textarea>
+        <button type="submit" id="send-btn" class="btn-submit" aria-label="Kirim pesan">
+          <span>Kirim</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
